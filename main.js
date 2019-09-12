@@ -11,8 +11,8 @@ function getData() {
 function showData(data) {
     const myArray = data.feed.entry;
     myArray.forEach(showDisney);
-    
-    
+
+
 }
 getData();
 
@@ -21,7 +21,7 @@ function showDisney(disneyData){
     const copy = template.cloneNode(true);
     console.log(disneyData);
     copy.querySelector("h2").textContent=disneyData.gsx$name.$t;
-    /*copy.querySelector(".powers").textContent=disneyData.gsx$powers.$t;
+    copy.querySelector(".powers").textContent=disneyData.gsx$powers.$t;
     copy.querySelector(".appearance").textContent=disneyData.gsx$appearance.$t;
     copy.querySelector(".dislikes").textContent=disneyData.gsx$dislikes.$t;
     copy.querySelector(".famousquotes").textContent=disneyData.gsx$famousquotes.$t;
@@ -29,7 +29,8 @@ function showDisney(disneyData){
     copy.querySelector(".nationality").textContent=disneyData.gsx$nationality.$t;
     copy.querySelector(".occupation").textContent=disneyData.gsx$occupation.$t;
     copy.querySelector(".personality").textContent=disneyData.gsx$personality.$t;
-    copy.querySelector(".zodiacsign").textContent=disneyData.gsx$zodiacsign.$t;*/
+    copy.querySelector(".zodiacsign").textContent=disneyData.gsx$zodiacsign.$t;
+    copy.querySelector(".zodiacsign").textContent=disneyData.gsx$zodiacsign.$t;
     document.querySelector("main").appendChild(copy);
 }
 
