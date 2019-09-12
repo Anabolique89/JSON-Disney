@@ -1,7 +1,51 @@
- h1{
-            color: red;
-        }
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h2{
+    text-align: center;
+}
+
 section{
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.left-side, .right-side{
+    display: flex;
     flex-direction: column;
+}
+
+.left-side{
+   border: 1px solid black;
+    width: 20rem;
+}
+
+.right-side{
+   margin-left: 3rem;
+    width: 30rem;
+}
+
+.character-img{
+    width: 10rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h4{
+   text-transform: capitalize;
+}
+
+.left-side h4 {
+    border-top: solid 1px black;
+}
+
+p {
+    color: grey;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
