@@ -4,6 +4,11 @@ const linkCategories = "https://spreadsheets.google.com/feeds/list/1Rap8F2cXos3X
 //window.addEventListener("load", getCategoriesData);
 //window.addEventListener("load", getData);
 
+//close the modal when clicked
+const modal = document.querySelector(".modal-background");
+modal.addEventListener("click", () => {
+    modal.classList.add("hide");
+});
 
 // fetching for categories
 
@@ -57,6 +62,12 @@ function showDisney(data) {
     
     // cloning the data for making categories
 
+    copy.querySelector(".tile__media").addEventListener("click", () => {
+        fetch(link)
+            .then(res => res.json())
+            .then(showDetails);
+    });
+    
    //document.querySelector("main").appendChild(copy);
     
     let className = data.gsx$category.$t.replace(" ", "-").toLowerCase().trim();
@@ -64,3 +75,20 @@ function showDisney(data) {
     document.querySelector("#" + className).appendChild(copy);
     
     };
+
+// shows the data in modal
+function showDetails(data) {
+    modal.querySelector("h2").textContent=data.gsx$name.$t;
+    modal.querySelector(".powers").textContent=data.gsx$powers.$t;
+    modal.querySelector(".appearance").textContent=data.gsx$appearance.$t;
+    modal.querySelector(".dislikes").textContent=data.gsx$dislikes.$t;
+    modal.querySelector(".famousquotes").textContent=data.gsx$famousquotes.$t;
+    modal.querySelector(".likes").textContent=data.gsx$likes.$t;
+    modal.querySelector(".nationality").textContent=data.gsx$nationality.$t;
+    modal.querySelector(".occupation").textContent=data.gsx$occupation.$t;
+    modal.querySelector(".personality").textContent=data.gsx$personality.$t;
+    modal.querySelector(".zodiacsign").textContent=data.gsx$zodiacsign.$t;
+    modal.querySelector(".character-img").src = `imgs/${data.gsx$image.$t}.jpg`;
+    //...
+    modal.classList.remove("hide");
+}
