@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Disney Characters</title>
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -14,14 +14,15 @@
         <img class="image" src="website.header2.jpg">
         <div class="navbar">
             <ul>
+               
+            
                 <li>
-                    <a href="#">Home</a></li>
+                    <a href="index.html">All Characters</a></li>
+             
                 <li>
-                    <a href="#">All Characters</a></li>
-                <li>
-                    <a href="#">About</a></li>
-                <li>
-                    <a href="#">Quiz</a></li>
+                    <a href="indexgame.html">Quiz</a></li>
+                    <li>
+                    <a href="conspiracy.html">Conspiracy</a></li>
             </ul>
         </div>
     </header>
@@ -29,6 +30,7 @@
     <main></main>
 
     <template>
+    
 
         <div class="row__inner">
             <div class="tile">
@@ -47,12 +49,14 @@
 
     <!-- MODAL -->
 
-    <div class="modal-background">
+       
+    <div class="modal-background hide">
+       <span class="close">&times;</span>
         <section class="modal-content">
            
             <div class="left-side">
                 <img src="imgs/stitch.jpg" class="character-img">
-                <h2></h2>
+                <h2 class="name"></h2>
                 <h4>Nationality</h4>
                 <p class="nationality"></p>
                 <h4>occupation</h4>
@@ -82,7 +86,8 @@
     </div>
 
     <footer>
-        <h4 class="footer-text">such error 404</h4>
+      
+		<div style="text-align: center"><a href="index.html">Back To Main Page</a></div>
     </footer>
 
     <script src="try_out.js"></script>

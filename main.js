@@ -1,56 +1,125 @@
 const link =
   "https://spreadsheets.google.com/feeds/list/1CEbA2Qs_T0qpbdC76ZOUXFSgCoOgz5U0vsz9q8FI5TU/od6/public/values?alt=json";
 const linkCategories = "https://spreadsheets.google.com/feeds/list/1Rap8F2cXos3Xn-zYw8DtsQ1ADRdevvnooBJeL_6WFTo/od6/public/values?alt=json";
-window.addEventListener("load", getData);
+const linkIds = "https://spreadsheets.google.com/feeds/list/1gqKk1HZ1Z2NR_t0mENyeEyGoVxiEMztKgl4xLgwQWNE/od6/public/values?alt=json";
 
+//close the modal when clicked
+const modal = document.querySelector(".modal-background");
+modal.addEventListener("click", () => {
+    modal.classList.add("hide");
+});
 
-  /*fetch(linkCategories)
+// fetching for categories
+
+fetch(linkCategories)
     .then(res => res.json())
-    .then(function(data){
-      data.forEach(buildCategory)
-})
+    .then(getCategoriesData)
           
- function buildCategory(data){
-      console.log(data.feed.entry.gsx$category.$t)
-  }          */
+function getCategoriesData(data){
+        const myCategoriesArray = data.feed.entry;
+        myCategoriesArray.forEach(buildCategory)
+        console.log(myCategoriesArray)
+        fetchData(link);
+        
+    }
 
+// creating category and putting data inside
 
-
-///
-
-
-
-function getData() {
-  fetch(link)
-    .then(res => res.json())
-    .then(showData);
+function buildCategory(data) {
+    const row = document.createElement("div");
+    row.classList.add("row");
+    let className = data.gsx$category.$t.replace(" ", "-").toLowerCase();
+    row.setAttribute("id", className)
+    document.querySelector("main").appendChild(row)
 }
 
-function showData(data) {
-    const myArray = data.feed.entry;
-    myArray.forEach(showDisney);
-}
-getData();
 
-function showDisney(disneyData){
+
+        function suka(data){
+            fetch(linkIds)
+            .then(res => res.json())
+            .then(getIdsData);
+        }  
+function getIdsData(data){
+    
+        const myIdsArray = data.feed.entry;
+        myIdsArray.forEach(buildModal)
+        console.log(myIdsArray)
+        fetchData(link);
+        
+    }
+
+// creating category and putting data inside
+
+function buildModal(data) {
+    let IdsName = data.gsx$id.$t;
+    console.log(IdsName)
+    modal.setAttribute("id", IdsName)
+}
+
+
+
+
+// fetching for disney characters
+
+function fetchData(link){
+    fetch(link)
+        .then(function (response) {
+            return response.json()
+        }).then(getData)
+}
+function getData(data) {
+            const myCharactersArray = data.feed.entry;
+            myCharactersArray.forEach(showDisney)
+//console.log(myCharactersArray)
+        }
+
+
+//cloning data for characters info
+
+function showDisney(data) {
+    //console.log(disneyData)
+    //console.log(disneyData.gsx$name.$t)
     const template = document.querySelector("template").content;
     const copy = template.cloneNode(true);
     
-   
-    copy.querySelector(".tile__img").src = `imgs/${disneyData.gsx$image.$t}.jpg`;
+    copy.querySelector(".tile__img").src = `imgs/${data.gsx$image.$t}.jpg`;
+    copy.querySelector(".tile__title").textContent= data.gsx$name.$t; 
     
-    copy.querySelector(".tile__title").textContent=disneyData.gsx$name.$t; 
-    /*copy.querySelector("h2").textContent=disneyData.gsx$name.$t;
-    copy.querySelector(".powers").textContent=disneyData.gsx$powers.$t;
-    copy.querySelector(".appearance").textContent=disneyData.gsx$appearance.$t;
-    copy.querySelector(".dislikes").textContent=disneyData.gsx$dislikes.$t;
-    copy.querySelector(".famousquotes").textContent=disneyData.gsx$famousquotes.$t;
-    copy.querySelector(".likes").textContent=disneyData.gsx$likes.$t;
-    copy.querySelector(".nationality").textContent=disneyData.gsx$nationality.$t;
-    copy.querySelector(".occupation").textContent=disneyData.gsx$occupation.$t;
-    copy.querySelector(".personality").textContent=disneyData.gsx$personality.$t;
-    copy.querySelector(".zodiacsign").textContent=disneyData.gsx$zodiacsign.$t;
-    copy.querySelector(".character-img").src = `imgs/${disneyData.gsx$image.$t}.jpg`;*/
-    document.querySelector("main").appendChild(copy);
-}
+    // cloning the data for making categories
 
+     // cloning the data for modal
+
+    copy.querySelector(".tile__media").addEventListener("click", () => {
+        
+            (suka);
+    });
+    
+   //document.querySelector("main").appendChild(copy);
+    
+    let className = data.gsx$category.$t.replace(" ", "-").toLowerCase().trim();
+    console.log("#" + className);
+    document.querySelector("#" + className).appendChild(copy);
+    
+    let IdsName = data.gsx$id.$t;
+    console.log("#" + IdsName);
+    //document.querySelector("#" + IdsName).appendChild(copy);
+    
+    };
+
+/*// shows the data in modal
+function showDetails(data) {
+    modal.querySelector("h2").textContent=data.gsx$name.$t;
+    modal.querySelector(".powers").textContent=data.gsx$powers.$t;
+    modal.querySelector(".appearance").textContent=data.gsx$appearance.$t;
+    modal.querySelector(".dislikes").textContent=data.gsx$dislikes.$t;
+    modal.querySelector(".famousquotes").textContent=data.gsx$famousquotes.$t;
+    modal.querySelector(".likes").textContent=data.gsx$likes.$t;
+    modal.querySelector(".nationality").textContent=data.gsx$nationality.$t;
+    modal.querySelector(".occupation").textContent=data.gsx$occupation.$t;
+    modal.querySelector(".personality").textContent=data.gsx$personality.$t;
+    modal.querySelector(".zodiacsign").textContent=data.gsx$zodiacsign.$t;
+    modal.querySelector(".character-img").src = `imgs/${data.gsx$image.$t}.jpg`;
+    //...
+    modal.classList.remove("hide");
+}*/

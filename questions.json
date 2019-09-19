@@ -1,0 +1,93 @@
+[
+  {
+    "question": "My duty is to my heart. Who said this ?",
+    "choice1": "Pocahontas",
+    "choice2": "Mulan",
+    "choice3": "Nemo",
+    "choice4": "Simba",
+    "answer": 2
+  },
+  {
+    "question": "Which famous artist has its own Disney character?",
+    "choice1": "Salvador Dali",
+    "choice2": "Andy Warhol",
+    "choice3": "Frida Kahlo",
+    "choice4": "Vincent Van Gogh",
+    "answer": 3
+  },
+  {
+    "question": "An unconscious desire to be taken care of; fear of independence is oficially called:",
+    "choice1": "Cinderella Complex",
+    "choice2": "Aurora Complex",
+    "choice3": "Bella Complex",
+    "choice4": "Alice Complex",
+    "answer": 1
+  },
+   {
+    "question": "All of the Disney films, except one, were the adaptions of pre-existing stories.",
+    "choice1": "Frozen",
+    "choice2": "Cars",
+    "choice3": "Lilo and Stitch",
+    "choice4": "Lion King",
+    "answer": 4
+  },
+  {
+    "question": "Which Disney characters are thought to be cousins?",
+    "choice1": "Rapunzel & Auroa",
+    "choice2": "Ariel & Hercules",
+    "choice3": "Peter Pan & Alice",
+    "choice4": "Jane Porter & Bella",
+    "answer": 2
+  },
+   {
+    "question": "One of the most famous Disney characters of all time has only 18 lines in a script. Who is it?",
+    "choice1": "Eyeore from Winnie the Pooh",
+    "choice2": "Alladin from Alladin",
+    "choice3": "Aurora from Sleeping Beauty",
+    "choice4": "Hector Rivera from Coco",
+    "answer": 3
+  },
+	{
+    "question": "What character adopted by a young girl is also known as experiment #626?",
+    "choice1": "Olaf",
+    "choice2": "Zazu",
+    "choice3": "Stitch",
+    "choice4": "Maui",
+    "answer": 3
+  },
+    {
+    "question": "One of the princesses was supposed to be a villain at first. Who is she?",
+    "choice1": "Jasmine",
+    "choice2": "Tiana",
+    "choice3": "Elsa",
+    "choice4": "Rapunzel",
+    "answer": 3
+  },
+    {
+    "question": "He is short, fat, and proud of that",
+    "choice1": "Stitch",
+    "choice2": "Winnie the Pooh",
+    "choice3": "Sneezy",
+    "choice4": "Dumbo",
+    "answer": 2
+  },
+ {
+    "question": "One of the worst villains was played by one of the most beautifull women. She was:",
+    "choice1": "Maleficent",
+    "choice2": "Ursulla",
+    "choice3": "The Evil Twin",
+    "choice4": "Cruella De Vil",
+    "answer": 1
+  }
+]
+
+
+
+
+
+
+
+
+
+
+ 

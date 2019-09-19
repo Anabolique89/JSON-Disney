@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+header{
+display: flex;
+flex-direction: column;
+}
+
+/* Navigation */
+
+.navbar ul {
+	display: flex;
+	justify-content: center;
+	padding: 5px;
+	
+	margin: 0;
+	list-style-type: none;
+	background-color:#101a2c ;
+	width: auto;
+}
+
+.navbar ul li {
+	display: flex;
+	
+}
+.navbar li a {
+	display: flex;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 12px 20px;
+	font-size: 1rem;
+	color: #fff;
+	letter-spacing: 1px;
+	text-align: center;
+}
+
+ .navbar li a:hover {
+  background-color: #01648f;
+  color: black;
+}
+
+h1{
+	padding: 0.5rem;
+	font-size: 22px;
+	background-color: #9e70a2;
+    border-radius: 20px;
+    padding-left: 1rem;
+    color: white;
+}
+
+.conspiracies{
+display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 
+        "left middle right";
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 2rem;
+    grid-column-gap: 7rem;
+}
+
+.left{
+    grid-area: left
+}
+
+.middle{
+    grid-area: middle;
+}
+
+.right{
+    grid-area: right;
+}
+
+@media only screen and (max-width: 1100px) {
+    .conspiracies{
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "left"
+        "middle"
+        "right";
+    margin-left: 4rem;
+    margin-right: 4rem;
+    margin-top: 2rem;
+    grid-column-gap: 7rem;
+}
+}
+
+ a:link,
+a:hover,
+a:active,
+a:visited {
+  transition: color 150ms;
+  color: #95a5a6;
+  text-decoration: none;
+}
+a:hover {
+  color: #7f8c8d;
+  text-decoration: underline;
+}
+   
